@@ -8,7 +8,7 @@ const Card = ({ _id, name, prompt, photo }) => {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`https://dalle-dydy.onrender.com/api/v1/post/${_id}`, { method: 'DELETE' });
+      const response = await fetch(`http://localhost:8080/api/v1/post/${_id}`, { method: 'DELETE' });
       const data = await response.json();
       if (data.success) {
         console.log(`Post ${data.data._id} deleted successfully`);
